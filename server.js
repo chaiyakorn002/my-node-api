@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
 });
 
 // เริ่มต้นเซิร์ฟเวอร์
-app.listen(5050, () => {
-    console.log('Server listening on port 5050');
+const port = process.env.PORT || 5050; // ใช้ port ที่ Vercel กำหนดหากมี, ถ้าไม่มีก็ใช้ 5050
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
 });
